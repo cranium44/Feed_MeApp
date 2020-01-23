@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Feed Me</string>
     <string name="skip">Skip</string>
+    <string name="cook_desc">Cook some delicious food, and share recipes that you like! It is easier when you know what to cook and how to do it.</string>
+    <string name="meet_desc">Of course, it is much more pleasant to share your meal with loved ones or friends. So, invite them right from the app!</string>
+    <string name="eat_desc">After you\'ve cooked something really delicious you have right to taste it and share your thoughts with the community.</string>
+    <string name="cook">Cook</string>
+    <string name="eat">Eat</string>
+    <string name="image">image</string>
 </resources>
