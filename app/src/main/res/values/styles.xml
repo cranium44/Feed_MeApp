@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="WelcomeText" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="WelcomeButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/get_started_btn_bg</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
 </resources>

@@ -8,4 +8,9 @@
     <string name="image">image</string>
     <string name="meet">Meet</string>
     <string name="cook">Cook</string>
+    <string name="cook_me_well">CookMeWell</string>
+    <string name="log_in">Log In</string>
+    <string name="get_started_now">Get Started Now</string>
+    <string name="cook_meet_eat">Cook. Meet. Eat.</string>
+    <string name="welcome">Welcome</string>
 </resources>
