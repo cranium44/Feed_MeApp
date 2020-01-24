@@ -18,7 +18,9 @@
         android:text="@string/skip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="@dimen/padding_default"
+        android:background="@drawable/onoarding_btn_bg"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
