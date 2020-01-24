@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".view.LoginActivity"></activity>
+        <activity
+            android:name=".view.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".view.WelcomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />

@@ -13,4 +13,6 @@
     <string name="get_started_now">Get Started Now</string>
     <string name="cook_meet_eat">Cook. Meet. Eat.</string>
     <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
