@@ -2,9 +2,11 @@
 <resources>
     <dimen name="font_large">32sp</dimen>
     <dimen name="font_regular">16sp</dimen>
+    <dimen name="font_semi">22sp</dimen>
     <dimen name="font_small">12sp</dimen>
     <dimen name="padding_default">8dp</dimen>
     <dimen name="margin_default">8dp</dimen>
     <dimen name="margin_large">16dp</dimen>
     <dimen name="border_radius_btn">40dp</dimen>
+    <dimen name="header_size">34sp</dimen>
 </resources>
