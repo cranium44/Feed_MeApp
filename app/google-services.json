@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "125051395692",
+    "firebase_url": "https://feed-me-app-4fece.firebaseio.com",
+    "project_id": "feed-me-app-4fece",
+    "storage_bucket": "feed-me-app-4fece.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125051395692:android:a2a787627011539b6f4249",
+        "android_client_info": {
+          "package_name": "com.decagon.feedme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125051395692-i63t8ea6f59159m6e9ke89cu0fgt3l17.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decagon.feedme",
+            "certificate_hash": "6aab72c4a632cd5bc1ea2b08b8f1e739d100a547"
+          }
+        },
+        {
+          "client_id": "125051395692-bmjgki5omcenfn616g0fd5gke8osjb6q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxPq6HaQa7_El1zHg1v_Ls6L-Vlm3HU-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125051395692-bmjgki5omcenfn616g0fd5gke8osjb6q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
