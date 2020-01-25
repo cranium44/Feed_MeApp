@@ -8,12 +8,17 @@ object UserRepository {
 
 
     fun checkLogin(email: String, password: String): Boolean{
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener {
-                isSuccessful = it.isSuccessful
-            }
-
+        if(email.isEmpty() || password.isEmpty()){
+            isSuccessful = false
+        }else{
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener {
+                    isSuccessful = it.isSuccessful
+                }
+        }
         return isSuccessful
     }
+
+
 
 }
