@@ -31,5 +31,11 @@ class LoginActivity : AppCompatActivity() {
 
             }
         }
+
+
+        sign_in_txt.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
+            finish()
+        }
     }
 }
