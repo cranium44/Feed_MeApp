@@ -1,9 +1,11 @@
 package com.decagon.feedme.controllers
 
+import com.decagon.feedme.models.User
 import com.google.firebase.auth.FirebaseAuth
 
 object UserRepository {
     private var isSuccessful = false
+    private var isCreated = false
     private val firebaseAuth = FirebaseAuth.getInstance()
 
 
@@ -17,6 +19,14 @@ object UserRepository {
                 }
         }
         return isSuccessful
+    }
+
+    fun createUser(email: String, password: String): Boolean{
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                isCreated = it.isSuccessful
+            }
+        return isCreated
     }
 
 
