@@ -22,10 +22,14 @@ object UserRepository {
     }
 
     fun createUser(email: String, password: String): Boolean{
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener {
-                isCreated = it.isSuccessful
-            }
+
+        if (!(email.isEmpty() || password.isEmpty())){
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener {
+                    isCreated = it.isSuccessful
+                }
+        }
+
         return isCreated
     }
 
