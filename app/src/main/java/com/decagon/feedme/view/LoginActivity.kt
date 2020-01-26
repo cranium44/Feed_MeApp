@@ -1,5 +1,6 @@
 package com.decagon.feedme.view
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,12 +18,17 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val sharedPreferences = getSharedPreferences(MainActivity.SHARED_PREF_CONFIG, Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
         login_btn.setOnClickListener {
             val email = email_input.editText?.text.toString().trim()
             val password = password_input.editText?.text.toString().trim()
             val success = repository.checkLogin(email, password)
 
             if (success){
+                editor.putBoolean(MainActivity.LOGGED_IN, true)
+                editor.apply()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }else{
@@ -30,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
                     .show()
 
             }
+
         }
 
 
