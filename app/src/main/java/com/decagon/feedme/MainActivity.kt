@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         const val SHARED_PREF_CONFIG = "config"
         const val ONBOARDED = "onboarded"
         const val LOGGED_IN = "logged_in"
+        const val USER_NAME = "username"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
