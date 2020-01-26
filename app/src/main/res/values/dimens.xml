@@ -9,4 +9,5 @@
     <dimen name="margin_large">16dp</dimen>
     <dimen name="border_radius_btn">40dp</dimen>
     <dimen name="header_size">34sp</dimen>
+    <dimen name="layout_padding">32dp</dimen>
 </resources>
