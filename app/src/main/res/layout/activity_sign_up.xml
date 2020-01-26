@@ -34,10 +34,11 @@
                 android:textAlignment="center" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/first_name_input"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/padding_default"
-                style="@style/EditTextStyle"
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -47,10 +48,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/last_name_input"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/padding_default"
-                style="@style/EditTextStyle"
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -60,10 +62,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_input"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/padding_default"
-                style="@style/EditTextStyle"
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -73,20 +76,37 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_input"
+                style="@style/EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/padding_default"
-                style="@style/EditTextStyle"
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPassword"
                     android:hint="@string/password" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirm_password_input"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/padding_default"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="@string/confirm_password" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
-                android:id="@+id/button"
+                android:id="@+id/sign_up_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 style="@style/WelcomeButton"
