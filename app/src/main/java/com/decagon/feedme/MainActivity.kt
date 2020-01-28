@@ -4,8 +4,11 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.decagon.feedme.view.OnboardingActivity
 import com.decagon.feedme.view.WelcomeActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,11 +22,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupBottomNavWithController()
 
         val sharedPreferences = getSharedPreferences(SHARED_PREF_CONFIG, Context.MODE_PRIVATE)
-        val onboarded = sharedPreferences.getBoolean(ONBOARDED, false)
+        val onBoarded = sharedPreferences.getBoolean(ONBOARDED, false)
         val loggedIn = sharedPreferences.getBoolean(LOGGED_IN, false)
-        if (!onboarded){
+        if (!onBoarded){
             val intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
         }
@@ -31,5 +35,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, WelcomeActivity::class.java))
         }
 
+    }
+
+    private fun setupBottomNavWithController(){
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_host) as NavHostFragment
+        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.navController)
     }
 }
