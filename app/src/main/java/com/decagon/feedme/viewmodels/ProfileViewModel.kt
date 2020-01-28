@@ -1,7 +1,7 @@
-package com.decagon.feedme.view
+package com.decagon.feedme.viewmodels
 
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class ProfileViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }
