@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".view.NavigationDrawerActivity"></activity>
         <activity
             android:name=".view.SignUpActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
