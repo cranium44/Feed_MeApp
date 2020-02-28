@@ -10,4 +10,5 @@
     <dimen name="border_radius_btn">40dp</dimen>
     <dimen name="header_size">34sp</dimen>
     <dimen name="layout_padding">32dp</dimen>
+    <dimen name="padding_minute">4dp</dimen>
 </resources>
