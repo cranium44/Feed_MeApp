@@ -22,8 +22,8 @@
                 android:id="@+id/imageView6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="fitXY"
                 android:contentDescription="@string/image"
+                android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/guideline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +68,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:drawableStart="@drawable/ic_time"
-                android:drawableTint="@color/blue"
                 android:drawablePadding="4dp"
+                android:drawableTint="@color/blue"
                 android:text="@string/placeholder"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recipe_name_display" />
@@ -78,10 +78,10 @@
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/blue"
-                android:text="@string/difficulty"
-                app:layout_constraintBaseline_toBaselineOf="@+id/time_duration"
                 android:paddingEnd="4dp"
+                android:text="@string/difficulty"
+                android:textColor="@color/blue"
+                app:layout_constraintBaseline_toBaselineOf="@+id/time_duration"
                 app:layout_constraintEnd_toStartOf="@+id/likes_display"
                 app:layout_constraintHorizontal_bias="0.28"
                 app:layout_constraintStart_toEndOf="@+id/time_duration" />
@@ -91,26 +91,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                tools:text="Medium"
                 app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
-                app:layout_constraintStart_toEndOf="@+id/textView14" />
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                tools:text="Medium" />
 
             <TextView
                 android:id="@+id/likes_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:text=""
                 android:drawableStart="@drawable/ic_thumb_up_black_24dp"
-                android:drawableTint="@color/green"
                 android:drawablePadding="@dimen/padding_minute"
-                tools:text="1356"
+                android:drawableTint="@color/green"
+                android:text=""
                 app:layout_constraintBaseline_toBaselineOf="@+id/time_duration"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="1356" />
 
             <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/profile_pic"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginStart="8dp"
                 android:src=""
                 app:civ_border_color="#3f51b5"
                 app:civ_border_width="4dp"
@@ -120,6 +122,68 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <ImageView
+                android:id="@+id/like_ic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
+                app:layout_constraintEnd_toStartOf="@+id/foreward_icon"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/profile_pic"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/profile_pic"
+                app:srcCompat="@drawable/ic_favorite" />
+
+            <ImageView
+                android:id="@+id/foreward_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="@+id/like_ic"
+                app:layout_constraintEnd_toStartOf="@+id/bookmark_ic"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/like_ic"
+                app:layout_constraintTop_toTopOf="@+id/like_ic"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/forward" />
+
+            <ImageView
+                android:id="@+id/bookmark_ic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/foreward_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/foreward_icon"
+                app:layout_constraintTop_toTopOf="@+id/foreward_icon"
+                app:srcCompat="@drawable/bookmark" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.50"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/added_by"
+                app:layout_constraintStart_toEndOf="@+id/profile_pic"
+                app:layout_constraintTop_toTopOf="@+id/profile_pic" />
+
+            <TextView
+                android:id="@+id/poster_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
+                app:layout_constraintStart_toStartOf="@+id/textView17" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
