@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.NumberPicker
 
 import com.decagon.feedme.R
 import com.decagon.feedme.viewmodels.AddRecipeViewModel
@@ -22,7 +23,22 @@ class AddRecipeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_add_recipe, container, false)
+        val view =  inflater.inflate(R.layout.fragment_add_recipe, container, false)
+        
+        //num picker stuff
+        view.findViewById<NumberPicker>(R.id.num_picker)?.apply {
+            minValue = 0
+            maxValue = 5
+            wrapSelectorWheel = true
+            setOnValueChangedListener { picker, oldVal, newVal ->  }
+        }
+        view.findViewById<NumberPicker>(R.id.minute_picker)?.apply { 
+            minValue = 0
+            maxValue = 59
+            setOnValueChangedListener { picker, oldVal, newVal ->  }
+        }
+        
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

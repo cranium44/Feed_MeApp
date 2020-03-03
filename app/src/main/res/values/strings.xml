@@ -32,6 +32,13 @@
     <string name="vegan">Vegan</string>
     <string name="vegetarian">Vegetarian</string>
     <string name="recipe_name">Recipe Name</string>
+    <string name="minutes">Minutes</string>
+    <string name="hours">Hours</string>
+    <string name="duration">Duration</string>
+    <string name="select_ingredients">Select Ingredients</string>
+    <string name="type">Type</string>
+    <string name="instructions">Instructions</string>
+    <string name="submit">Submit</string>
     <string-array name="hours_picker">
         <item>1</item>
         <item>2</item>
