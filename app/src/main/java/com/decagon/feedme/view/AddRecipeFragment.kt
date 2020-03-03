@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.NumberPicker
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.decagon.feedme.R
 import com.decagon.feedme.viewmodels.AddRecipeViewModel
@@ -25,10 +26,6 @@ import com.karumi.dexter.listener.single.PermissionListener
 
 
 class AddRecipeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = AddRecipeFragment()
-    }
 
     private lateinit var viewModel: AddRecipeViewModel
 
@@ -56,8 +53,8 @@ class AddRecipeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(AddRecipeViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProvider(this).get(AddRecipeViewModel::class.java)
+
     }
 
     private fun requestForStoragePermission(){
@@ -76,7 +73,7 @@ class AddRecipeFragment : Fragment() {
                 }
 
                 override fun onPermissionDenied(response: PermissionDeniedResponse?) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    showSettingsDialog()
                 }
 
             })
