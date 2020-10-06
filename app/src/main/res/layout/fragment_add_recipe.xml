@@ -1,13 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.AddRecipeFragment">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/food_image_display"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:contentDescription="@string/image"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/no_image"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/capture_image_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_photo_camera"
+                app:layout_constraintBottom_toBottomOf="@+id/food_image_display"
+                app:layout_constraintStart_toEndOf="@+id/food_image_display" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/recipe_name_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:theme="@style/EditTextStyle2"
+                app:layout_constraintTop_toBottomOf="@+id/food_image_display">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/recipe_name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Switch
+                android:id="@+id/vegetarian_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:switchPadding="@dimen/padding_default"
+                android:text="@string/vegetarian"
+                android:textColor="@color/font_color"
+                android:theme="@style/SwitchTheme"
+                app:layout_constraintStart_toStartOf="@+id/recipe_name_input"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_name_input" />
+
+            <Switch
+                android:id="@+id/vegan_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:switchPadding="@dimen/padding_default"
+                android:text="@string/vegan"
+                android:textColor="@color/font_color"
+                android:theme="@style/SwitchTheme"
+                app:layout_constraintBaseline_toBaselineOf="@+id/vegetarian_switch"
+                app:layout_constraintStart_toEndOf="@+id/vegetarian_switch" />
+
+            <NumberPicker
+                android:id="@+id/num_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <NumberPicker
+                android:id="@+id/minute_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/num_picker"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toTopOf="@+id/num_picker" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/hours"
+                android:textColor="@color/font_color"
+                android:textSize="@dimen/font_regular"
+                app:layout_constraintBottom_toBottomOf="@+id/num_picker"
+                app:layout_constraintStart_toEndOf="@+id/num_picker"
+                app:layout_constraintTop_toTopOf="@+id/num_picker" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/minutes"
+                android:textColor="@color/font_color"
+                android:textSize="@dimen/font_regular"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
+                app:layout_constraintStart_toEndOf="@+id/minute_picker" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/duration"
+                android:textColor="@color/font_color"
+                android:textSize="@dimen/font_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vegetarian_switch" />
+
+            <Button
+                android:id="@+id/select_ingredients_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/select_ingredients"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/num_picker" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/instructions_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:theme="@style/EditTextStyle2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/select_ingredients_btn">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/instructions"
+                    android:inputType="textMultiLine"
+                    android:lines="7" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/recipe_type_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView16"
+                app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/type"
+                android:textColor="@color/font_color"
+                android:textSize="@dimen/font_regular"
+                app:layout_constraintBaseline_toBaselineOf="@+id/select_ingredients_btn"
+                app:layout_constraintStart_toEndOf="@+id/select_ingredients_btn" />
+
+            <Button
+                android:id="@+id/submit_post_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/instructions_input" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </FrameLayout>

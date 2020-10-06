@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.decagon.feedme.R
+import com.decagon.feedme.controllers.PostsAdapter
 import com.decagon.feedme.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -24,6 +27,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.home_fragment, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.suggestedRecyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
+        recyclerView.adapter = PostsAdapter()
         return view
     }
 

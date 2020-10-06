@@ -1,8 +1,0 @@
-package com.decagon.feedme.models.recipe
-
-
-import com.google.gson.annotations.SerializedName
-
-data class RecipeResponse(
-    var recipes: List<Recipe>
-)
